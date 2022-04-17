@@ -1,0 +1,31 @@
+<html><head>
+    <meta charset="UTF-8">
+    <title>Counter</title>
+</head>
+<body>
+    <div id="counter">6</div>
+    <button id="increase"> + </button>
+    <button id="decrease"> - </button>
+    <script>
+        // 에러를 발생시키는 코드: 선택자는 'counter-x' 가 아니라 counter를 지정해야한다.
+
+        const $counter = document.getElementById('counter');
+        const $increase = document.getElementById('increase');
+        const $decrease = document.getElementById('decrease');
+
+        let num = 0;
+        const render = function(){ $counter.innerHTML = num;};
+
+        $increase.onclick = function(){
+            num++;
+            console.log("increase버튼 클릭, 현재:", num);
+            render();
+        }
+
+        $decrease.onclick = function(){
+            num--;
+            console.log("decrease버튼 클릭, 현재:", num);
+            render();
+        }
+    </script>
+</body></html>
